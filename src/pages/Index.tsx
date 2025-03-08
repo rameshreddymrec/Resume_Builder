@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Code, Palette, ArrowRight, FileText } from 'lucide-react';
+import { Code, Palette, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 
 const Index = () => {
