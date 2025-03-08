@@ -133,7 +133,127 @@ const TechnicalResume = () => {
               />
             </TabsContent>
             
-            {/* Similar content for other tabs would go here */}
+            <TabsContent value="microsoft" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <ResumeTemplate 
+                title="Data Scientist" 
+                company="Microsoft"
+                description="Analytical resume template that highlights data projects, technical skills, and quantifiable achievements."
+                imageSrc="https://images.unsplash.com/photo-1568952433726-3896e3881c65?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-indigo-50"
+              />
+              <ResumeTemplate 
+                title="Cloud Solutions Architect" 
+                company="Microsoft"
+                description="Template focused on Azure cloud architecture, enterprise solutions, and technical leadership."
+                imageSrc="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-indigo-50"
+                isPremium
+              />
+              <ResumeTemplate 
+                title=".NET Developer" 
+                company="Microsoft"
+                description="Specialized template for .NET ecosystem developers with focus on C#, ASP.NET and Microsoft technologies."
+                imageSrc="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-indigo-50"
+              />
+            </TabsContent>
+            
+            <TabsContent value="apple" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <ResumeTemplate 
+                title="iOS Developer" 
+                company="Apple"
+                description="Clean, minimalist design highlighting mobile development expertise, relevant to Apple's design philosophy."
+                imageSrc="https://images.unsplash.com/photo-1544396821-4dd40b938ad3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-gray-100"
+                isPremium
+              />
+              <ResumeTemplate 
+                title="UX Designer" 
+                company="Apple"
+                description="Elegant template focusing on human-centered design principles and beautiful user experiences."
+                imageSrc="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-gray-100"
+              />
+              <ResumeTemplate 
+                title="Swift Developer" 
+                company="Apple"
+                description="Code-focused resume template highlighting Swift expertise, app development, and performance optimization."
+                imageSrc="https://images.unsplash.com/photo-1621839673705-6617adf9e890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-gray-100"
+              />
+            </TabsContent>
+            
+            <TabsContent value="amazon" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <ResumeTemplate 
+                title="Cloud Architect" 
+                company="Amazon"
+                description="Template focused on cloud infrastructure, system design, and scaling solutions for AWS environments."
+                imageSrc="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-orange-50"
+              />
+              <ResumeTemplate 
+                title="DevOps Engineer" 
+                company="Amazon"
+                description="Template highlighting CI/CD pipelines, infrastructure as code, and operational excellence."
+                imageSrc="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-orange-50"
+                isPremium
+              />
+              <ResumeTemplate 
+                title="Solutions Architect" 
+                company="Amazon"
+                description="Leadership-focused template highlighting system design, customer solutions, and business impact."
+                imageSrc="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-orange-50"
+              />
+            </TabsContent>
+            
+            <TabsContent value="other" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <ResumeTemplate 
+                title="Machine Learning Engineer" 
+                company="Facebook"
+                description="Template showcasing AI/ML projects, research contributions, and technical implementation skills."
+                imageSrc="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-blue-100"
+              />
+              <ResumeTemplate 
+                title="Full Stack Developer" 
+                company="Netflix"
+                description="Balanced template highlighting both frontend and backend expertise, with focus on scalable applications."
+                imageSrc="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-red-50"
+                isPremium
+              />
+              <ResumeTemplate 
+                title="Frontend Engineer" 
+                company="Spotify"
+                description="Design-focused developer template highlighting UI/UX skills and interactive web applications."
+                imageSrc="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-green-50"
+              />
+              <ResumeTemplate 
+                title="Backend Engineer" 
+                company="LinkedIn"
+                description="Server-side focused template highlighting scalable architectures, API design, and database optimization."
+                imageSrc="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-blue-50"
+              />
+              <ResumeTemplate 
+                title="Security Engineer" 
+                company="Cisco"
+                description="Security-focused template highlighting threat detection, vulnerability management, and secure architectures."
+                imageSrc="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-cyan-50"
+                isPremium
+              />
+              <ResumeTemplate 
+                title="Blockchain Developer" 
+                company="Coinbase"
+                description="Specialized template for blockchain and web3 developers highlighting smart contracts and decentralized applications."
+                imageSrc="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+                bgColor="bg-indigo-50"
+              />
+            </TabsContent>
           </Tabs>
         </div>
       </section>
