@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { FileText, Download } from 'lucide-react';
@@ -24,6 +25,24 @@ const ResumeTemplate: React.FC<ResumeTemplateProps> = ({
   textColor = 'text-gray-800',
   isPremium = false,
 }) => {
+  const navigate = useNavigate();
+
+  const handleUseTemplate = () => {
+    navigate('/editor', { 
+      state: { 
+        template: {
+          title,
+          company,
+          description,
+          imageSrc,
+          bgColor,
+          textColor,
+          isPremium
+        }
+      }
+    });
+  };
+
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
       <div className={cn("relative h-72 overflow-hidden", bgColor)}>
@@ -53,7 +72,10 @@ const ResumeTemplate: React.FC<ResumeTemplateProps> = ({
           <Button variant="outline" className="w-full text-xs">
             Preview
           </Button>
-          <Button className="w-full text-xs bg-resume-indigo hover:bg-resume-indigo/90">
+          <Button 
+            className="w-full text-xs bg-resume-indigo hover:bg-resume-indigo/90"
+            onClick={handleUseTemplate}
+          >
             <Download className="h-3 w-3 mr-1" />
             Use Template
           </Button>
