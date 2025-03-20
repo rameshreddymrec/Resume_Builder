@@ -127,8 +127,14 @@ const ATSChecker: React.FC<ATSCheckerProps> = ({ resumeContent }) => {
     return 'text-red-600';
   };
 
+  const getProgressColor = (score: number) => {
+    if (score >= 80) return 'bg-green-600';
+    if (score >= 60) return 'bg-amber-600';
+    return 'bg-red-600';
+  };
+
   return (
-    <Card className="w-full">
+    <Card className="w-full shadow-md hover:shadow-lg transition-shadow duration-300">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Radar className="h-5 w-5" />
@@ -143,7 +149,7 @@ const ATSChecker: React.FC<ATSCheckerProps> = ({ resumeContent }) => {
             <p className="text-sm text-muted-foreground">
               See how well your resume might perform with Applicant Tracking Systems used by most employers.
             </p>
-            <Button onClick={runATSCheck} className="mt-4">
+            <Button onClick={runATSCheck} className="mt-4 shadow-sm hover:shadow-md transition-shadow">
               Run ATS Check
             </Button>
           </div>
@@ -161,7 +167,7 @@ const ATSChecker: React.FC<ATSCheckerProps> = ({ resumeContent }) => {
 
         {result && (
           <div className="space-y-6">
-            <div className="flex flex-col items-center justify-center p-4 border rounded-lg bg-muted/10">
+            <div className="flex flex-col items-center justify-center p-4 border rounded-lg bg-muted/10 shadow-inner">
               <span className="text-sm font-medium text-muted-foreground">ATS Compatibility Score</span>
               <span className={`text-4xl font-bold ${getScoreColor(result.score)}`}>
                 {result.score}/100
@@ -170,17 +176,13 @@ const ATSChecker: React.FC<ATSCheckerProps> = ({ resumeContent }) => {
               <div className="w-full mt-4">
                 <Progress 
                   value={result.score} 
-                  className="h-2" 
-                  indicatorClassName={
-                    result.score >= 80 ? "bg-green-600" : 
-                    result.score >= 60 ? "bg-amber-600" : "bg-red-600"
-                  }
+                  className={`h-2 ${getProgressColor(result.score)}`}
                 />
               </div>
             </div>
             
             <div className="space-y-4">
-              <div>
+              <div className="bg-white p-4 rounded-lg shadow-sm">
                 <h3 className="text-sm font-medium flex items-center gap-2 mb-2">
                   <CheckCheck className="h-4 w-4 text-green-600" />
                   Strengths
@@ -194,7 +196,7 @@ const ATSChecker: React.FC<ATSCheckerProps> = ({ resumeContent }) => {
                 </ul>
               </div>
               
-              <div>
+              <div className="bg-white p-4 rounded-lg shadow-sm">
                 <h3 className="text-sm font-medium flex items-center gap-2 mb-2">
                   <AlertCircle className="h-4 w-4 text-amber-600" />
                   Suggested Improvements
@@ -208,7 +210,7 @@ const ATSChecker: React.FC<ATSCheckerProps> = ({ resumeContent }) => {
                 </ul>
               </div>
               
-              <div>
+              <div className="bg-white p-4 rounded-lg shadow-sm">
                 <h3 className="text-sm font-medium mb-2">Keywords</h3>
                 <div className="mb-2">
                   <span className="text-xs text-muted-foreground">Found:</span>
@@ -236,7 +238,7 @@ const ATSChecker: React.FC<ATSCheckerProps> = ({ resumeContent }) => {
               </div>
             </div>
             
-            <Button onClick={runATSCheck} variant="outline" size="sm" className="w-full">
+            <Button onClick={runATSCheck} variant="outline" size="sm" className="w-full shadow-sm hover:shadow-md transition-shadow">
               Re-analyze Resume
             </Button>
           </div>

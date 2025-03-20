@@ -131,7 +131,7 @@ const ResumeEditor = () => {
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
       
-      <div className="bg-white border-b py-4 sticky top-0 z-10">
+      <div className="bg-white border-b py-4 sticky top-0 z-10 shadow-sm">
         <div className="container mx-auto flex items-center justify-between px-4">
           <div className="flex items-center">
             <Button 
@@ -151,6 +151,7 @@ const ResumeEditor = () => {
               variant="outline" 
               size="sm" 
               onClick={downloadAsWord}
+              className="shadow-sm hover:shadow-md transition-shadow"
             >
               <Download className="h-4 w-4 mr-1" />
               Word
@@ -159,6 +160,7 @@ const ResumeEditor = () => {
               variant="default" 
               size="sm" 
               onClick={downloadAsPDF}
+              className="shadow-sm hover:shadow-md transition-shadow"
             >
               <Download className="h-4 w-4 mr-1" />
               PDF
@@ -172,26 +174,26 @@ const ResumeEditor = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
             {/* Left side - Form controls */}
             <div className="md:col-span-4">
-              <Card className="sticky top-24">
+              <Card className="sticky top-24 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-6">
                   <div className="flex mb-6 border-b">
                     <Button
                       variant={activeSection === 'details' ? 'default' : 'ghost'}
-                      className="flex-1 rounded-none"
+                      className="flex-1 rounded-none shadow-sm"
                       onClick={() => setActiveSection('details')}
                     >
                       Details
                     </Button>
                     <Button
                       variant={activeSection === 'theme' ? 'default' : 'ghost'}
-                      className="flex-1 rounded-none"
+                      className="flex-1 rounded-none shadow-sm"
                       onClick={() => setActiveSection('theme')}
                     >
                       Theme
                     </Button>
                     <Button
                       variant={activeSection === 'ats' ? 'default' : 'ghost'}
-                      className="flex-1 rounded-none"
+                      className="flex-1 rounded-none shadow-sm"
                       onClick={() => setActiveSection('ats')}
                     >
                       ATS
@@ -221,7 +223,10 @@ const ResumeEditor = () => {
             
             {/* Right side - Resume Preview */}
             <div className="md:col-span-8">
-              <div ref={previewRef} className="bg-white shadow-lg p-8 min-h-[1056px] w-full mx-auto">
+              <div 
+                ref={previewRef} 
+                className="bg-white shadow-xl p-8 min-h-[1056px] w-full mx-auto rounded-lg border border-gray-100"
+              >
                 <ResumePreview 
                   template={resumeTemplate}
                   userDetails={userDetails}
@@ -233,7 +238,7 @@ const ResumeEditor = () => {
         </div>
       </section>
       
-      <footer className="bg-gray-900 text-white py-6">
+      <footer className="bg-gray-900 text-white py-6 shadow-inner">
         <div className="container mx-auto px-4 text-center">
           <p>© 2023 DualResume Genius. All rights reserved.</p>
         </div>
