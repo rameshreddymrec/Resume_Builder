@@ -168,8 +168,9 @@ const ResumeEditor = () => {
       
       <section className="py-8 flex-grow">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="lg:col-span-1">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            {/* Left side - Form controls */}
+            <div className="md:col-span-4">
               <Card className="sticky top-24">
                 <CardContent className="p-6">
                   <div className="flex mb-6 border-b">
@@ -204,7 +205,8 @@ const ResumeEditor = () => {
               </Card>
             </div>
             
-            <div className="lg:col-span-2">
+            {/* Right side - Resume Preview */}
+            <div className="md:col-span-8">
               <div ref={previewRef} className="bg-white shadow-lg p-8 min-h-[1056px] w-full mx-auto">
                 <ResumePreview 
                   template={resumeTemplate}
