@@ -9,6 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 import ThemeSelector from '@/components/ThemeSelector';
 import UserDetailsForm from '@/components/UserDetailsForm';
 import ResumePreview from '@/components/ResumePreview';
+import ATSChecker from '@/components/ATSChecker';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { saveAs } from 'file-saver';
@@ -20,7 +21,7 @@ const ResumeEditor = () => {
   const resumeTemplate = location.state?.template;
   const previewRef = useRef<HTMLDivElement>(null);
   
-  const [activeSection, setActiveSection] = useState('details'); // 'details' or 'theme'
+  const [activeSection, setActiveSection] = useState('details'); // 'details', 'theme', or 'ats'
   const [userDetails, setUserDetails] = useState({
     name: '',
     email: '',
@@ -188,18 +189,31 @@ const ResumeEditor = () => {
                     >
                       Theme
                     </Button>
+                    <Button
+                      variant={activeSection === 'ats' ? 'default' : 'ghost'}
+                      className="flex-1 rounded-none"
+                      onClick={() => setActiveSection('ats')}
+                    >
+                      ATS
+                    </Button>
                   </div>
                   
-                  {activeSection === 'details' ? (
+                  {activeSection === 'details' && (
                     <UserDetailsForm 
                       userDetails={userDetails} 
                       onUpdate={handleDetailsUpdate} 
                     />
-                  ) : (
+                  )}
+                  
+                  {activeSection === 'theme' && (
                     <ThemeSelector 
                       selectedTheme={selectedTheme} 
                       onThemeChange={handleThemeChange}
                     />
+                  )}
+                  
+                  {activeSection === 'ats' && (
+                    <ATSChecker resumeContent={userDetails} />
                   )}
                 </CardContent>
               </Card>
